@@ -1,16 +1,28 @@
 // ==========> GLOBALS STYLE <================
 @forward 'colors';
 @forward 'fonts';
+@forward 'sizes';
+@forward 'resetStyle';
 
-html {
-    box-sizing: border-box;
-    font-size: 100%;
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Barlow', sans-serif;
+    min-height: 100vh;
+    background: var(--body-background-color);
 }
 
-*,
-*::before,
-*::after {
-    box-sizing: inherit;
-    margin: 0;
-    padding: 0;
-}
+#app {
+    position: relative;
+    width: 100%;
+    max-width: var(--app-max-width);
+    height: 812px;
+    background: var(--app-background-color);
+    border: 8px solid var(--app-border-color);
+    border-radius: 8px;
+    box-shadow: 2px 2px 8px var(--app-shadow-color);
+    margin: 5px;
+  }
