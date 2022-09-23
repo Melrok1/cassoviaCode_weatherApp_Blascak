@@ -89,7 +89,10 @@ export default {
         } else {
           console.log("get city by name err");
         }
-      });
+      })
+      .catch(error => {
+      console.error("openweathermap error", error);
+    });
   },
   // ------ CREATED ---------
   created() {},
