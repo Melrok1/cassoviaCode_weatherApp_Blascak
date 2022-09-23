@@ -8,12 +8,6 @@
 
 
 
-
-
-
-
-
-
 <style lang="scss">
 //
 </style>
