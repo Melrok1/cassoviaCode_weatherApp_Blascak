@@ -1,30 +1,49 @@
 <template>
   <div class="home">
+
     <div class="backgroundImage"></div>
-    <!-- <HeaderTemplate :selectedCity="selectedCity"/> -->
+
+    <SearchCity 
+      v-if="showSearchScreen" 
+      :weather="weather"
+      @selectedCity="(city) => this.selectedCity = city"
+      @closeSelectCityPage="(styte) => this.showSearchScreen = state"
+    />
+
     <WeatherReport
       v-if="!showSearchScreen"
       :selectedCity="selectedCity"
       :api_key="api_key"
+      @closeSelectCityPage="(state) => this.showSearchScreen = state"
     />
-    <main></main>
+
   </div>
 </template>
 
 
 
+<!-- 
+============================================================
+||||==================== SCRIPT ========================||||
+============================================================
+-->
+
+
 
 <script>
-// import HeaderTemplate from '@/components/Header.vue'
-import WeatherReport from "@/components/WeatherReport.vue";
-import axios from "axios";
+
+import WeatherReport from '@/components/WeatherReport.vue'
+import SearchCity from '@/components/CitySearch.vue'
+import axios from 'axios'
 
 export default {
   name: "HomeView",
+  // ------ COMPONENTS ---------
   components: {
-    // HeaderTemplate,
     WeatherReport,
+    SearchCity
   },
+  // ------ DATA ---------
   data() {
     return {
       api_key: "799bcbb5b55d3dc99bf1e0f1674a5b28",
@@ -40,7 +59,7 @@ export default {
       showSearchScreen: false,
     };
   },
-
+  // ------ COMPUTED ---------
   computed: {
     listOfCityId() {
       let listOfIds = [];
@@ -48,7 +67,7 @@ export default {
       return listOfIds.toString();
     },
   },
-
+  // ------ MOUNTED ---------
   mounted() {
     axios
       .get(
@@ -72,25 +91,18 @@ export default {
         }
       });
   },
-
-  created() {
-    // bus.$on("selectedCity", (data) => {
-    //   this.selectedCity = data;
-    // }),
-    // bus.$on("closeSelectCityPage", (data) => {
-    //   this.showSearchScreen = data;
-    // });
-  },
+  // ------ CREATED ---------
+  created() {},
 };
 </script>
 
 
 
-
-
-
-
-
+<!-- 
+============================================================
+||||===================== STYLE ========================||||
+============================================================
+-->
 
 
 
