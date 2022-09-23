@@ -3,6 +3,7 @@
 @forward 'fonts';
 @forward 'sizes';
 @forward 'resetStyle';
+@forward '@media';
 
 @mixin displayFlex($direction, $justify, $align) {
   display: flex;
@@ -28,8 +29,8 @@ body {
   max-width: var(--app-max-width);
   height: 812px;
   background: var(--app-background-color);
-  border: 8px solid var(--app-border-color);
-  border-radius: 8px;
-  box-shadow: 2px 2px 8px var(--app-shadow-color);
-  margin: 5px;
+  border: none;
+  border-radius: 0px;
+  box-shadow: none;
+  margin: 0px;
 }

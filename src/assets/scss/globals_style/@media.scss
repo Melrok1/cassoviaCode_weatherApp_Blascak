@@ -1,0 +1,31 @@
+//-------------------------------------//
+//----------- @ MEDIA -----------------//
+//-------------------------------------//
+
+
+@media screen and (min-width: 550px) {
+
+	#app {
+		// position: relative;
+		// width: 100%;
+		// max-width: var(--app-max-width);
+		// height: 812px;
+		background: var(--app-background-color) !important;
+		border: 8px solid var(--app-border-color) !important;
+		border-radius: 8px !important;
+		box-shadow: 2px 2px 8px var(--app-shadow-color) !important;
+		margin: 5px !important;
+	}
+
+	// #app {
+	// 	position: relative;
+	// 	width: 100%;
+	// 	max-width: var(--app-max-width);
+	// 	height: auto;
+	// 	background: var(--app-background-color);
+	// 	border: none;
+	// 	border-radius: 0px;
+	// 	box-shadow: none;
+	// 	margin: 0px;
+	// }
+}
